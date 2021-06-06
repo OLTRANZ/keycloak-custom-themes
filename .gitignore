@@ -1,0 +1,5 @@
+/custom-themes-configmap.yaml
+/keycloak-cr.yaml
+/keycloak-dev-deployment.yaml
+/keycloak-operator - Copy.yaml
+/standalone.xml
