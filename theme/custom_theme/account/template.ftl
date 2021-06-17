@@ -24,8 +24,7 @@
         </#list>
     </#if>
 </head>
-<body class="admin-console user ${bodyClass}">
-        
+<body class="admin-console user ${bodyClass}" style="background: #edf0f5;">   
     <header class="navbar navbar-default navbar-pf navbar-main header">
         <nav class="navbar" role="navigation">
             <div class="navbar-header">
@@ -57,7 +56,7 @@
     </header>
 
     <div class="container" style="height: 105%">
-        <div class="bs-sidebar col-sm-4" >
+        <div class="bs-sidebar col-sm-3" >
             <ul style="list-style-type: none;">
                 <li >
                 <a href="${url.accountUrl}">
@@ -90,6 +89,12 @@
                 <a href="${url.applicationsUrl}">
                 <i class="glyphicon glyphicon-list"></i>
                 <span>${msg("applications")}<span></a></li>
+                <#if referrer?has_content && referrer.url?has_content>
+                    <li><a href="${referrer.url}" id="referrer">
+                    <i class="glyphicon glyphicon-cog"></i>
+                    <span>${msg("backTo",referrer.name)}</span>
+                    </a></li>
+                </#if>
                 <li><a href="${url.logoutUrl}">
                 <i class="glyphicon glyphicon-log-out"></i>
                 <span>${msg("doSignOut")}</span>
@@ -104,7 +109,7 @@
             </ul>
         </div>
 
-        <div class="col-sm-8 content-area" style="padding-top: 16%;">
+        <div class="col-sm-9 content-area" style="padding-top: 16%;background: #edf0f5;">
             <#if message?has_content>
                 <div class="alert alert-${message.type}" style="background: #000;justify-content:center;display:flex">
                     <#if message.type=='success' ><span class="pficon pficon-ok"></span></#if>

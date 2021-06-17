@@ -8,6 +8,71 @@ html, body {
   display: none;
 }  
 
+.card .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.upload-class{
+    background: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    border-bottom: 0 none;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.avatar {
+    display: block;
+        position: relative;
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+        border: 0;
+        height: 60px;
+        border-radius: 5px;
+        outline: 0;
+}
+
+.file-input > input[type="file"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: all;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 100%;
+    }
+}
+
+.card-title-custom {
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    background: #f8f9fa;
+    color: #495057;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.form-horizontal{
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    background: #ffffff;
+    color: #495057;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 0 none;
+}
+
 .bs-sidebar{
     background-color: #206df7;
     padding-top: 15%;

@@ -17,9 +17,7 @@
                     <div class="panel panel-info col-md-6 col-6 col-sm-7">
                         <div class="panel-heading">
                             <div class="panel-title">Sign In</div>
-                            <#if realm.resetPasswordAllowed>
-                                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></div>
-                            </#if>
+                           
                         </div>
 
                         <div class="panel-body" >
@@ -30,19 +28,36 @@
                             </#if>
 
                             <form id="kc-form-login" class="${properties.kcFormClass!}" onsubmit="login.disabled = true; return true;" action="${url.loginAction?keep_after('^[^#]*?://.*?[^/]*', 'r')}" method="post">
-                                <div class="${properties.kcInputWrapperClass!}">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <div class="">
+                                <label class="inputlabel"> Email</label>
+                                <div class="${properties.kcInputWrapperClass!}" style="width: 100%;">
+                                    <#--  <span class="input-group-addon">
+                                    
+                                    </span>  -->
                                     <#if usernameEditDisabled??>
                                         <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" disabled placeholder="<#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>"/>
                                     <#else>
                                         <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" autofocus autocomplete="off" placeholder="<#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>" />
                                     </#if>
                                 </div>
-
-                                <div class="${properties.kcInputWrapperClass!}">
+                                </div>
+                                
+                                <div class="">
+                                <label class="inputlabel"> Password</label>
+                                <div class="${properties.kcInputWrapperClass!}" style="width: 100%;">
+                                    <input tabindex="2" 
+                                           id="password" 
+                                           class="${properties.kcInputClass!}" 
+                                           name="password" 
+                                           type="password" 
+                                           autocomplete="off" 
+                                           placeholder="${msg("password")}"/>
+                                </div>
+                                </div>
+                                <#--  <div class="${properties.kcInputWrapperClass!}">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                     <input tabindex="2" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="off" placeholder="${msg("password")}"/>
-                                </div>
+                                </div>  -->
 
                                 <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                                     <#if realm.rememberMe && !usernameEditDisabled??>
@@ -60,7 +75,7 @@
 
                                 <div id="kc-form-buttons" style="margin-top:10px" class="${properties.kcFormButtonsClass!}">
                                     <div class="${properties.kcFormButtonsWrapperClass!}">
-                                        <input tabindex="4" class="${properties.kcButtonClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                                        <input tabindex="4" style="width:100%" class="${properties.kcButtonClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                                         <#if realm.password && social.providers??>
                                             <#list social.providers as p>
                                                 <a href="${p.loginUrl}" id="zocial-${p.alias}" class="btn btn-primary">${msg("doLogIn")} With ${p.displayName}</a>
@@ -71,10 +86,14 @@
 
                                 <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                                     <div class="form-group">
-                                        <div class="col-md-12 control">
-                                            <div style="border-top: 1px solid#888; padding-top:15px;" >
-                                                ${msg("noAccount")}
-                                                <a tabindex="6" href="${url.registrationUrl}" style="font-weight: bold;">
+                                        <div class="row control" style="display: flex;">
+                                             <#if realm.resetPasswordAllowed>
+                                                <div class="col-md-6 col-sm-6 col-6" style="display: flex;justify-content: center;">
+                                                <a href="${url.loginResetCredentialsUrl}" class="registerlink" >${msg("doForgotPassword")}</a></div>
+                                            </#if>
+                                            <p class="col-md-2 col-sm-2 col-2" style="color:#ADB1BC;">.<p>
+                                            <div  class="col-md-4 col-sm-4 col-4" >
+                                                <a tabindex="6" href="${url.registrationUrl}"  class="registerlink">
                                                     ${msg("doRegister")}
                                                 </a>
                                             </div>
