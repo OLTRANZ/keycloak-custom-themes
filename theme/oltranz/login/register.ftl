@@ -3,12 +3,36 @@
     <#if section = "header">
         ${msg("registerTitle")}
     <#elseif section = "form">
+    <div class="container" style="width:100%;height:100%">
+                <div class="col-md-4 col-sm-4 col-4" style="background-color:#206df7">
+                    <div style="margin-top:80%">
+                        <img src="${url.resourcesPath}/fonts/baselogo.png" alt="logo" class="center-vertically" style="margin-left:20%"/>
+                        <img src="${url.resourcesPath}/fonts/AuthKey.png" alt="logo" class="center-vertically" />
+                    </div>
+                </div>
+                <div id="loginbox" style="margin-top:10%;" class="mainbox col-md-8 col-sm-8 col-8">
+                   <div class="col-md-3 col-3 col-sm-2"></div>
+                    <div class="panel panel-info col-md-6 col-6 col-sm-7">
+                        <div class="panel-heading">
+                            <div class="panel-title">Register</div>
+                            <#--  <#if realm.resetPasswordAllowed>
+                                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></div>
+                            </#if>  -->
+                        </div>
+
+                        <div class="panel-body" >
+                            <#if message?has_content>
+                                <div id="login-alert" class="alert alert-danger col-sm-12">
+                                    <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
+                                </div>
+                            </#if>
         <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
+                    <label for="firstName" class="${properties.kcLabelClass!} inputlabel">${msg("firstName")}</label>
                 </div>
-                <div class="${properties.kcInputWrapperClass!}">
+                <div class="${properties.kcInputWrapperClass!}" style="width:100%">
+                <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>  -->
                     <input type="text" id="firstName" class="${properties.kcInputClass!}" name="firstName"
                            value="${(register.formData.firstName!'')}"
                            aria-invalid="<#if messagesPerField.existsError('firstName')>true</#if>"
@@ -24,9 +48,10 @@
 
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")}</label>
+                    <label for="lastName" class="${properties.kcLabelClass!} inputlabel">${msg("lastName")}</label>
                 </div>
-                <div class="${properties.kcInputWrapperClass!}">
+                <div class="${properties.kcInputWrapperClass!}" style="width:100%">
+                <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>  -->
                     <input type="text" id="lastName" class="${properties.kcInputClass!}" name="lastName"
                            value="${(register.formData.lastName!'')}"
                            aria-invalid="<#if messagesPerField.existsError('lastName')>true</#if>"
@@ -40,12 +65,30 @@
                 </div>
             </div>
 
+            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('phone',properties.kcFormGroupErrorClass!)}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="user.attributes.phone" class="${properties.kcLabelClass!} inputlabel">${msg("phone")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}" style="width:100%">
+                <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>  -->
+                
+                    <input
+                    type="text"
+                    id="user.attributes.phone"
+                    class="${properties.kcInputClass!}"
+                    name="user.attributes.phone"
+                    value="${(register.formData['user.attributes.phone']!'')}"
+                    />
+                </div>
+            </div>
+
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="email" class="${properties.kcLabelClass!}">${msg("email")}</label>
+                    <label for="email" class="${properties.kcLabelClass!} inputlabel">${msg("email")}</label>
                 </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="email" class="${properties.kcInputClass!}" name="email"
+                <div class="${properties.kcInputWrapperClass!}" style="width:100%">
+                <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>  -->
+                    <input style="width:100%" type="text" id="email" class="${properties.kcInputClass!}" name="email"
                            value="${(register.formData.email!'')}" autocomplete="email"
                            aria-invalid="<#if messagesPerField.existsError('email')>true</#if>"
                     />
@@ -58,22 +101,12 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="user.attributes.mobile" class="${properties.kcLabelClass!}">Mobile number</label>
-                </div>
-
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" class="${properties.kcInputClass!}" id="user.attributes.mobile" name="user.attributes.mobile" value="${(register.formData['user.attributes.mobile']!'')}"/>
-                </div>
-            </div>
-
             <#if !realm.registrationEmailAsUsername>
                 <div class="${properties.kcFormGroupClass!}">
                     <div class="${properties.kcLabelWrapperClass!}">
-                        <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label>
+                        <label for="username" class="${properties.kcLabelClass!} inputlabel">${msg("username")}</label>
                     </div>
-                    <div class="${properties.kcInputWrapperClass!}">
+                    <div class="${properties.kcInputWrapperClass!}" style="width:100%">
                         <input type="text" id="username" class="${properties.kcInputClass!}" name="username"
                                value="${(register.formData.username!'')}" autocomplete="username"
                                aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"
@@ -91,10 +124,11 @@
             <#if passwordRequired??>
                 <div class="${properties.kcFormGroupClass!}">
                     <div class="${properties.kcLabelWrapperClass!}">
-                        <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
+                        <label for="password" class="${properties.kcLabelClass!} inputlabel">${msg("password")}</label>
                     </div>
-                    <div class="${properties.kcInputWrapperClass!}">
-                        <input type="password" id="password" class="${properties.kcInputClass!}" name="password"
+                    <div class="${properties.kcInputWrapperClass!}" style="width:100%">
+                    <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>  -->
+                        <input style="width: 100%" type="password" id="password" class="${properties.kcInputClass!}" name="password"
                                autocomplete="new-password"
                                aria-invalid="<#if messagesPerField.existsError('password','password-confirm')>true</#if>"
                         />
@@ -110,9 +144,10 @@
                 <div class="${properties.kcFormGroupClass!}">
                     <div class="${properties.kcLabelWrapperClass!}">
                         <label for="password-confirm"
-                               class="${properties.kcLabelClass!}">${msg("passwordConfirm")}</label>
+                               class="${properties.kcLabelClass!} inputlabel">${msg("passwordConfirm")}</label>
                     </div>
-                    <div class="${properties.kcInputWrapperClass!}">
+                    <div class="${properties.kcInputWrapperClass!}" style="width:100%">
+                    <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>  -->
                         <input type="password" id="password-confirm" class="${properties.kcInputClass!}"
                                name="password-confirm"
                                aria-invalid="<#if messagesPerField.existsError('password-confirm')>true</#if>"
@@ -136,16 +171,22 @@
             </#if>
 
             <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                        <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
+                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}" style="margin-left:0px;margin-right: 0px">
+                    <input style="width: 100%" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doRegister")}"/>
+                </div>
+                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}" style="display: flex;
+    justify-content: center;">
+                    <div class="${properties.kcFormOptionsWrapperClass!}" >
+                        <span><a href="${url.loginUrl}" class="registerlink">Already have an account? Sign in</a></span>
                     </div>
                 </div>
 
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doRegister")}"/>
-                </div>
             </div>
         </form>
+        </div>
+                    </div>
+                    <div class="col-md-3 col-3 col-sm-2"></div>
+                </div>
+            </div>
     </#if>
 </@layout.registrationLayout>
