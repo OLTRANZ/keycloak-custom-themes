@@ -3,3 +3,5 @@
 /keycloak-dev-deployment.yaml
 /keycloak-operator - Copy.yaml
 /standalone.xml
+.DS_Store
+theme/.DS_Store
