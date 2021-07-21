@@ -1,0 +1,10 @@
+{
+    "themes": [{
+        "name" : "oltranz",
+        "types": [ "login", "email","welcome","admin","account" ]
+    },
+    {
+        "name" : "oltranz_v2",
+        "types": [ "login", "email","welcome","admin","account" ]
+    }]
+}

@@ -1,0 +1,162 @@
+html, body {
+    height: 100%;
+    margin-top: -3%;
+    padding-top: 15px;
+  }
+
+.navbar {
+  display: none;
+}  
+
+.card .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.upload-class{
+    background: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    border-bottom: 0 none;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.avatar {
+    display: block;
+        position: relative;
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+        border: 0;
+        height: 60px;
+        border-radius: 5px;
+        outline: 0;
+}
+
+.file-input > input[type="file"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: all;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 100%;
+    }
+}
+
+.card-title-custom {
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    background: #f8f9fa;
+    color: #495057;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.form-horizontal{
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    background: #ffffff;
+    color: #495057;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 0 none;
+}
+
+.bs-sidebar{
+    background-color: #206df7;
+    padding-top: 15%;
+}
+.subtitle {
+    float: right;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bs-sidebar li {
+    margin-bottom:20px; 
+    margin-top:20px
+}
+
+.login-pf body {
+    border-top:  transparent;
+    background: transparent;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+.hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.panel-body{
+    padding-top: 30px;
+}
+
+#kc-logo-wrapper {
+    background-image: none;
+    background-repeat: no-repeat;
+    visibility: hidden;
+}
+
+#kc-content #kc-content-wrapper #kc-form {
+    width: 100%;
+    height: 100%;
+}
+
+#loginbox {
+    margin-top: 100px;
+}
+
+
+@media (max-width: 541px) {
+    #loginbox{
+        margin-top: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 6px;
+    }
+
+    .panel-body{
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 542px) and (max-width: 1400px) {
+    #loginbox{
+        margin-top: 40px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+    .panel-body{
+        padding-top: 20px;
+    }
+}

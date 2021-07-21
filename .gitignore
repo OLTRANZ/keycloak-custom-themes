@@ -1,7 +1,5 @@
-/custom-themes-configmap.yaml
-/keycloak-cr.yaml
-/keycloak-dev-deployment.yaml
-/keycloak-operator - Copy.yaml
-/standalone.xml
 .DS_Store
 theme/.DS_Store
+# allow only jar
+target/*
+!target/*.jar

@@ -62,7 +62,8 @@ Coming Soon
 * **JABIRO Christian** (https://github.com/jabichris)
 
 ## Acknowledgments
-
+https://keycloak.discourse.group/t/creating-custom-theme-in-keycloak-x/7896/4
+mvn package
 
 ## Licence
 This software is published by `Oltranz Engineers Team` under the [MIT licence](http://opensource.org/licenses/MIT).
