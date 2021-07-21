@@ -60,19 +60,19 @@
                             </div>
                         </div>
 
-                        <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('phone',properties.kcFormGroupErrorClass!)}">
+                        <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('phoneNumber',properties.kcFormGroupErrorClass!)}">
                             <div class="${properties.kcLabelWrapperClass!}">
-                                <label for="user.attributes.phone" class="${properties.kcLabelClass!} inputlabel">${msg("phone")}</label>
+                                <label for="user.attributes.phoneNumber" class="${properties.kcLabelClass!} inputlabel">${msg("phoneNumber")}</label>
                             </div>
                             <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:0">
-                            <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>  -->
+                            <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-phoneNumber-alt"></i></span>  -->
                             
                                 <input
                                 type="text"
-                                id="user.attributes.phone"
+                                id="user.attributes.phoneNumber"
                                 class="${properties.kcInputClass!}"
-                                name="user.attributes.phone"
-                                value="${(register.formData['user.attributes.phone']!'')}"
+                                name="user.attributes.phoneNumber"
+                                value="${(register.formData['user.attributes.phoneNumber']!'')}"
                                 />
                             </div>
                         </div>
