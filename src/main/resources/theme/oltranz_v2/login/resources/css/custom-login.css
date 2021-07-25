@@ -28,6 +28,7 @@ html, body {
     font-family: Noto Sans;
     font-style: normal;
     font-weight: normal;
+    text-decoration: none;
     font-size: 16px;
     line-height: 106.5%;
     text-decoration-line: underline;

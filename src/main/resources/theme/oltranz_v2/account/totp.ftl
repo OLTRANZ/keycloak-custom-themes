@@ -1,12 +1,12 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='totp' bodyClass='totp'; section>
 
-    <div class="row" style="margin-top:-20%">
-        <div class="col-md-9">
+    <div class="row">
+        <div class="col-md-10">
             <h2>${msg("authenticatorTitle")}</h2>
         </div>
         <#if totp.otpCredentials?size == 0>
-            <div class="col-md-3 subtitle">
+            <div class="col-md-2 subtitle">
                 <span class="subtitle"><span class="required">*</span> ${msg("requiredFields")}</span>
             </div>
         </#if>
@@ -85,7 +85,7 @@
             <li>
                 <p>${msg("totpStep2")}</p>
                 <p><img src="data:image/png;base64, ${totp.totpSecretQrCode}" alt="Figure: Barcode"></p>
-                <p><a style="color: rgba(19, 32, 65, 0.5);" href="${totp.manualUrl}" id="mode-manual">${msg("totpUnableToScan")}</a></p>
+                <p><a href="${totp.manualUrl}" id="mode-manual">${msg("totpUnableToScan")}</a></p>
             </li>
         </#if>
         <li>
@@ -125,16 +125,12 @@
             <div id="kc-form-buttons" class="col-md-offset-2 col-md-10 submit">
                 <div class="">
                     <button type="submit"
-                            class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!} col-md-5"
+                            class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}"
                             id="saveTOTPBtn" name="submitAction" value="Save">${msg("doSave")}
                     </button>
-                    <div class="col-md-2"></div>
                     <button type="submit"
-                            class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!} col-md-5"
-                            id="cancelTOTPBtn" name="submitAction" value="Cancel"
-                            style=" background: #cf142b"
-                            >${msg("doCancel")}
-                            
+                            class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}"
+                            id="cancelTOTPBtn" name="submitAction" value="Cancel">${msg("doCancel")}
                     </button>
                 </div>
             </div>
