@@ -45,16 +45,13 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div id="kc-form-buttons">
-                        <div class="">
-                            <button type="submit"
-                            style="width:100%;background-color:#4baaf5;color:white;border-radius:5px;
-                                    border:none; height:35px;font-weight:bold;"
-                                    class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Save">${msg("doSave")}</button>
-                        </div>
-                    </div>
+                <div>
+                    <button type="submit"
+                    style="width:100%;background-color:#4baaf5;color:white;border-radius:5px;
+                            border:none; height:35px;font-weight:bold;"
+                            class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Save">${msg("doSave")}</button>
                 </div>
+                   
             </form>
         </div>
         <div class="row">
