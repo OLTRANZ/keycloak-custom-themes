@@ -15,7 +15,7 @@
                     </div>
                     <div class="panel-body" >
                         <#if message?has_content>
-                            <div id="login-alert" class="alert alert-danger col-sm-12">
+                            <div id="login-alert" class="alert alert-danger col-sm-7">
                                 <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
                             </div>
                         </#if>

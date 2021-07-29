@@ -6,7 +6,7 @@
             <h2>${msg("sessionsHtmlTitle")}</h2>
         </div>
     </div>
-    <div style="padding-left:35%;margin-bottom:30%;">                
+    <div style="padding-left:35%;margin-bottom:8%;">                
     </div>
     <table class="table table-striped table-bordered">
         <thead>
@@ -45,7 +45,7 @@
                             class="btn btn-primary">${msg("doLogOutAllSessions")}</button>
     </form>
     <div class="row">
-        <div class="col-md-6 offset-md-3" style="color:#808080;margin-top:30%;margin-left:28%;">
+        <div class="col-md-6 offset-md-3" style="color:#808080;margin-top:50%;margin-left:28%;">
             <b>Oltranz</b> &emsp;  &emsp;  Copyright Ⓒ BaseSMS 2021.</div>
     </div>
 

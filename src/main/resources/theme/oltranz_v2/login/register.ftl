@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <#if message?has_content>
-                        <div id="login-alert" class="alert alert-danger col-sm-12">
+                        <div id="login-alert" class="alert alert-danger col-sm-7">
                             <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
                         </div>
                     </#if>
@@ -92,23 +92,23 @@
                             </div>
                         </div>
 
-                        <#if !realm.registrationEmailAsUsername>
-                            <div class="${properties.kcFormGroupClass!}">
-                    
-                                <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
-                                    <input type="text" id="username" class="${properties.kcInputClass!}" name="username"
-                                        style="height:50px;border-radius:5px;background-color:#EEEEEE";
-                                        value="${(register.formData.username!'')}" autocomplete="username" placeholder="Username"
-                                        aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"
-                                    />
-                                    <#if messagesPerField.existsError('username')>
-                                        <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                            ${kcSanitize(messagesPerField.get('username'))?no_esc}
-                                        </span>
-                                    </#if>
-                                </div>
+                        
+                        <div class="${properties.kcFormGroupClass!}">
+                
+                            <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
+                                <input type="text" id="username" class="${properties.kcInputClass!}" name="username"
+                                    style="height:50px;border-radius:5px;background-color:#EEEEEE";
+                                    value="${(register.formData.username!'')}" autocomplete="username" placeholder="Username"
+                                    aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"
+                                />
+                                <#if messagesPerField.existsError('username')>
+                                    <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                        ${kcSanitize(messagesPerField.get('username'))?no_esc}
+                                    </span>
+                                </#if>
                             </div>
-                        </#if>
+                        </div>
+                        
 
                         <#if passwordRequired??>
                             <div class="${properties.kcFormGroupClass!}">

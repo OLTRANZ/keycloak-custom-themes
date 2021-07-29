@@ -17,7 +17,7 @@
                         
                         <div class="panel-body">
                             <#if message?has_content>
-                                <div id="login-alert" class="alert alert-danger col-sm-12">
+                                <div id="login-alert" class="alert alert-danger col-sm-7">
                                     <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
                                 </div>
                             </#if>
@@ -77,7 +77,7 @@
                                         <div class="form-group" style="width: 67%">
                                             <div class="row control" style="display: flex;padding-left:12%;">
                                                 <div>
-                                                    <p style="color:#808080">Don't you have an account?,
+                                                    <p style="color:#808080">Don't you have an account?
                                                         <a tabindex="6" href="${url.registrationUrl}"
                                                             style="text-decoration:none;color:#4baaf5;"
                                                             class="registerlink">

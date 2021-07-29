@@ -2,7 +2,8 @@
 <@layout.mainLayout active='password' bodyClass='password'; section>
 
     <div>
-        <div class="row">
+        <div class="row" style="background-color:white;
+                                border-radius:10px;">
             <div class="col-md-10">
                 <h2>${msg("changePasswordHtmlTitle")}</h2>
             </div>
@@ -10,7 +11,15 @@
                 <span class="subtitle">${msg("allFieldsRequired")}</span>
             </div>
         </div>
-        <div class="col-md-7" style="padding-left:30%;padding-top:20%;">
+        <div class="col-md-5" style="margin-top:19%;margin-left:20%;
+                                     background-color:white;
+                                     padding-left:60px;
+                                     padding-right:60px;
+                                     padding-bottom:20px;
+                                     paddint-top:10px;
+                                     border-shadow: 0px 10px 40px rgba(41,50, 65,0.65);
+                                     border-sizing:border-box;
+                                     border-radius:24px">
             <form action="${url.passwordUrl}" class="form-horizontal" style="border:none;" method="post">
                 <input type="text" id="username" name="username" value="${(account.username!'')}" autocomplete="username" readonly="readonly" style="display:none;">
 
@@ -55,7 +64,7 @@
             </form>
         </div>
         <div class="row">
-            <div class="col-md-6 offset-md-3" style="color:#808080;margin-top:20%;margin-left:28%;">
+            <div class="col-md-6 offset-md-3" style="color:#808080;margin-top:20%;margin-left:25%;">
                 <b>Oltranz</b> &emsp;  &emsp;  Copyright Ⓒ BaseSMS 2021.</div>
         </div>
     </div>
