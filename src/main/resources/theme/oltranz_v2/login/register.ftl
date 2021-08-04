@@ -59,7 +59,6 @@
 
                         <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('phoneNumber',properties.kcFormGroupErrorClass!)}">
                             <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
-                            <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>  -->
                             
                                 <input
                                 type="text"
@@ -69,7 +68,13 @@
                                 placeholder="Phone"
                                 name="user.attributes.phoneNumber"
                                 value="${(register.formData['user.attributes.phoneNumber']!'')}"
+                                aria-invalid="<#if messagesPerField.existsError('phoneNumber')>true</#if>"
                                 />
+                                <#if messagesPerField.existsError('phoneNumber')>
+                                    <span id="input-error-phoneNumber" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                                        ${kcSanitize(messagesPerField.get('phoneNumber'))?no_esc}
+                                    </span>
+                                </#if>
                             </div>
                         </div>
 

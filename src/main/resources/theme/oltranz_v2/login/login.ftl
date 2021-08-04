@@ -14,7 +14,7 @@
                             <img src="${url.resourcesPath}/fonts/baselogo.png"
                             style="width:20%;height:20%;" alt="logo" class="center-vertically" style="margin-left:20%"/>
                         </div>
-                        
+
                         <div class="panel-body">
                             <#if message?has_content>
                                 <div id="login-alert" class="alert alert-danger col-sm-7">
@@ -91,8 +91,7 @@
                             </form>
                         </div>
                         <div style="padding-top:20%;color:#808080;"><b>Oltranz</b> &emsp;  &emsp; Copyright Ⓒ BaseSMS 2021.</div>
-                    </div>
-                    
+                    </div>  
                 </div>
             </div>
         </#if>
