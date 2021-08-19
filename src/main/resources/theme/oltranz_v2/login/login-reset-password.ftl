@@ -27,11 +27,11 @@
                                         <i class="glyphicon glyphicon-envelope"></i>
                                         </span>  -->
                                         <#if auth?has_content && auth.showUsername()>
-                                            <input type="text" id="username" name="username" class="${properties.kcInputClass!}" placeholder="Email" 
+                                            <input type="text" id="username" name="username" class="${properties.kcInputClass!}" placeholder="Username" 
                                             style="height:50px; background-color:#EEEEEE" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
                                         <#else>
                                             <input type="text" id="username" name="username" class="${properties.kcInputClass!}" 
-                                            style="height:50px; background-color:#EEEEEE" placeholder="Email" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
+                                            style="height:50px; background-color:#EEEEEE" placeholder="Username" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
                                         </#if>
 
                                         <#if messagesPerField.existsError('username')>
