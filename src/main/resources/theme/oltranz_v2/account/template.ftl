@@ -64,7 +64,7 @@
                 <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>"><a href="${url.passwordUrl}">${msg("password")}</a></li></#if>
                 <#if features.identityFederation><li class="<#if active=='social'>active</#if>"><a href="${url.socialUrl}">${msg("federatedIdentity")}</a></li></#if>
                 <li class="<#if active=='sessions'>active</#if>"><a href="${url.sessionsUrl}">${msg("sessions")}</a></li>
-                <li class="<#if active=='applications'>active</#if>"><a href="https://basesms-dev.oltranz.com/">${msg("home")}</a></li>
+                <li class="<#if active=='applications'>active</#if>"><a href="https://basesms.oltranz.com/">${msg("home")}</a></li>
                 <#if features.log><li class="<#if active=='log'>active</#if>"><a href="${url.logUrl}">${msg("log")}</a></li></#if>
                 <#if realm.userManagedAccessAllowed && features.authorization><li class="<#if active=='authorization'>active</#if>"><a href="${url.resourceUrl}">${msg("myResources")}</a></li></#if>
             </ul>
