@@ -3,19 +3,298 @@
     <#if section = "header">
         ${msg("registerTitle")}
     <#elseif section = "form">
-    <div class="container" style="width:100%;height:100%">
+    <style>
+        .mainContainer{
+            width:100%;
+            height:100%
+        }
+        .mainbox{
+            margin-top:6%;
+        }
+        .panel-body{
+            width:50%;
+        }
+        .pagelogo{
+            padding-left:23%;margin-bottom:10%;
+        }
+        .imageSize{
+            width:20%;height:20%;
+        }
+        .inputFields{
+            width:60%;margin-bottom:10px;
+        }
+        .confirmPasswordDiv{
+            width:60%;height:50%;
+        }
+        .inpuDesign{
+            height:50px;border-radius:5px;background-color:#EEEEEE;
+        }
+        #username{
+            background-color:#EEEEEE;
+        }
+        #password{
+             background-color:#EEEEEE;
+        }
+        .registerdiv{
+            margin-left:0px;margin-right: 0px
+           
+        }
+        .submitInput{
+            width: 60%;background-color:#4baaf5;color:white;border-radius:5px;border:none;height:50px;margin-bottom:20px;"
+        }
+        .footer{
+            padding-top:10%;
+        }
+         @media screen and (max-width: 1024px){
+                .mainContainer{
+                    width:100%;
+                    height:100%
+                }
+                .mainbox{
+                    padding-top:20%;
+                }
+                .leftSize{
+                    width:35%;
+                }
+                .panel-body{
+                    width:70%;
+                   
+                }
+                .pagelogo{
+                    padding-left:23%;margin-bottom:10%;
+                }
+                .imageSize{
+                    width:20%;height:20%;
+                }
+                .inputFields{
+                    width:60%;margin-bottom:10px;
+                }
+                .confirmPasswordDiv{
+                    width:60%;height:50%;
+                }
+                .inpuDesign{
+                    height:50px;border-radius:5px;background-color:#EEEEEE;
+                }
+                #username{
+                    background-color:#EEEEEE;
+                }
+                #password{
+                    background-color:#EEEEEE;
+                }
+                .registerdiv{
+                    margin-left:0px;margin-right: 0px
+                
+                }
+                .submitInput{
+                    width: 60%;background-color:#4baaf5;color:white;border-radius:5px;border:none;height:50px;margin-bottom:20px;"
+                }
+                .footer{
+                    padding-top:50%;
+                }
+         }
+         @media screen and (max-width: 920px){
+                .mainContainer{
+                    width:100%;
+                    height:100%
+                }
+                .mainbox{
+                    padding-top:15%;
+                }
+                .leftSize{
+                    width:35%;
+                }
+                .panel-body{
+                    width:70%;
+                   
+                }
+                .pagelogo{
+                    padding-left:23%;margin-bottom:10%;
+                }
+                .imageSize{
+                    width:20%;height:20%;
+                }
+                .inputFields{
+                    width:60%;margin-bottom:10px;
+                }
+                .confirmPasswordDiv{
+                    width:60%;height:50%;
+                }
+                .inpuDesign{
+                    height:50px;border-radius:5px;background-color:#EEEEEE;
+                }
+                #username{
+                    background-color:#EEEEEE;
+                }
+                #password{
+                    background-color:#EEEEEE;
+                }
+                .registerdiv{
+                    margin-left:0px;margin-right: 0px
+                
+                }
+                .submitInput{
+                    width: 60%;background-color:#4baaf5;color:white;border-radius:5px;border:none;height:50px;margin-bottom:20px;"
+                }
+                .footer{
+                    padding-left:-5%;
+                    padding-top:40%;
+                }
+         }
+         @media screen and (max-width: 720px){
+              .mainContainer{
+                    width:100%;
+                    height:100%
+                }
+                .mainbox{
+                    padding-top:15%;
+                }
+                .leftSize{
+                    width:30%;
+                }
+                .panel-body{
+                    width:70%;
+                   
+                }
+                .pagelogo{
+                    padding-left:40%;margin-bottom:10%;
+                }
+                .imageSize{
+                    width:40%;height:40%;
+                }
+                .inputFields{
+                    width:100%;margin-bottom:10px;
+                }
+                .confirmPasswordDiv{
+                    width:100%;height:50%;
+                }
+                .inpuDesign{
+                    height:50px;border-radius:5px;background-color:#EEEEEE;
+                }
+                #username{
+                    background-color:#EEEEEE;
+                }
+                #password{
+                    background-color:#EEEEEE;
+                }
+                .registerdiv{
+                    margin-left:0px;margin-right: 0px
+                
+                }
+                .submitInput{
+                    width: 100%;background-color:#4baaf5;color:white;border-radius:5px;border:none;height:50px;margin-bottom:20px;"
+                }
+                .footer{
+                    padding-top:40%;
+                }
+         }
+         @media screen and (max-width: 620px){
+             .mainContainer{
+                    width:100%;
+                    height:100%
+                }
+                .mainbox{
+                    padding-top:5%;
+                }
+                .leftSize{
+                    width:30%;
+                }
+                .panel-body{
+                    width:70%;
+                   
+                }
+                .pagelogo{
+                    padding-left:40%;margin-bottom:10%;
+                }
+                .imageSize{
+                    width:40%;height:40%;
+                }
+                .inputFields{
+                    width:100%;margin-bottom:10px;
+                }
+                .confirmPasswordDiv{
+                    width:100%;height:50%;
+                }
+                .inpuDesign{
+                    height:50px;border-radius:5px;background-color:#EEEEEE;
+                }
+                #username{
+                    background-color:#EEEEEE;
+                }
+                #password{
+                    background-color:#EEEEEE;
+                }
+                .registerdiv{
+                    margin-left:0px;margin-right: 0px
+                
+                }
+                .submitInput{
+                    width: 100%;background-color:#4baaf5;color:white;border-radius:5px;border:none;height:50px;margin-bottom:20px;"
+                }
+                .footer{
+                    padding-top:10%;
+                }
+         }
+         @media screen and (max-width: 520px){
+                .mainContainer{
+                    width:100%;
+                    height:100%
+                }
+                .mainbox{
+                    padding-top:5%;
+                }
+                .leftSize{
+                    width:30%;
+                }
+                .panel-body{
+                    width:70%;
+                   
+                }
+                .pagelogo{
+                    padding-left:40%;margin-bottom:10%;
+                }
+                .imageSize{
+                    width:40%;height:40%;
+                }
+                .inputFields{
+                    width:100%;margin-bottom:10px;
+                }
+                .confirmPasswordDiv{
+                    width:100%;height:50%;
+                }
+                .inpuDesign{
+                    height:50px;border-radius:5px;background-color:#EEEEEE;
+                }
+                #username{
+                    background-color:#EEEEEE;
+                }
+                #password{
+                    background-color:#EEEEEE;
+                }
+                .registerdiv{
+                    margin-left:0px;margin-right: 0px
+                
+                }
+                .submitInput{
+                    width: 100%;background-color:#4baaf5;color:white;border-radius:5px;border:none;height:50px;margin-bottom:20px;"
+                }
+                .footer{
+                    padding-top:10%;
+                }
+         }
+
+    </style>
+    <div class="mainContainer container">
         
-        <div class="col-md-6 col-sm-6 col-6" style="background-color:white"> 
+        <div class="leftSize col-md-6 col-sm-6 col-6"> 
         </div> 
-        <div id="loginbox" style="margin-top:6%;" class="mainbox col-md-8 col-sm-8 col-8">
-            <div class="col-md-6 col-3 col-sm-2"></div>
+        <div id="loginbox" class="mainbox col-md-8 col-sm-8 col-8">
+            <div class=" col-md-6 col-3 col-sm-2"></div>
             <div class="col-6">
-               
-                <div class="panel-body" style="width:50%">
+                <div class="panel-body">
                     <div>
-                        <div style="padding-left:23%;margin-bottom:10%;">
-                            <img src="${url.resourcesPath}/fonts/baselogo.png"
-                            style="width:20%;height:20%;" alt="logo" class="center-vertically" style="margin-left:20%"/>
+                        <div class="pagelogo">
+                            <img src="${url.resourcesPath}/fonts/baselogo.png" class="imageSize"
+                             alt="logo" class="center-vertically"/>
                         </div>
                     </div>
                     <#if message?has_content>
@@ -25,10 +304,10 @@
                     </#if>
                     <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
                         <div class="${properties.kcFormGroupClass!}">
-                            <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
+                            <div class="inputFields ${properties.kcInputWrapperClass!}">
                                 <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>  -->
-                                <input type="text" id="firstName" class="${properties.kcInputClass!}" name="firstName"
-                                    style="height:50px;border-radius:5px;background-color:#EEEEEE;" placeholder="First Name"
+                                <input type="text" id="firstName" class="inpuDesign ${properties.kcInputClass!}" name="firstName"
+                                     placeholder="First Name"
                                     value="${(register.formData.firstName!'')}"
                                     aria-invalid="<#if messagesPerField.existsError('firstName')>true</#if>"
                                 />
@@ -42,10 +321,10 @@
                         </div>
 
                         <div class="${properties.kcFormGroupClass!}">
-                            <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
+                            <div class="inputFields ${properties.kcInputWrapperClass!}">
                             <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>  -->
-                                <input type="text" id="lastName" class="${properties.kcInputClass!}" name="lastName"
-                                    style="height:50px;border-radius:5px;background-color:#EEEEEE;" placeholder="Last Name"
+                                <input type="text" id="lastName" class="inpuDesign ${properties.kcInputClass!}" name="lastName"
+                                     placeholder="Last Name"
                                     value="${(register.formData.lastName!'')}"
                                     aria-invalid="<#if messagesPerField.existsError('lastName')>true</#if>" />
 
@@ -58,13 +337,12 @@
                         </div>
 
                         <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('phoneNumber',properties.kcFormGroupErrorClass!)}">
-                            <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
+                            <div class="inputFields ${properties.kcInputWrapperClass!}">
                             
                                 <input
                                 type="text"
                                 id="user.attributes.phoneNumber"
-                                class="${properties.kcInputClass!}"
-                                style="height:50px;border-radius:5px;background-color:#EEEEEE;"
+                                class="inpuDesign ${properties.kcInputClass!}"
                                 placeholder="Phone"
                                 name="user.attributes.phoneNumber"
                                 value="${(register.formData['user.attributes.phoneNumber']!'')}"
@@ -80,11 +358,10 @@
 
                         <div class="${properties.kcFormGroupClass!}">
                             
-                            <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
+                            <div class="inputFields ${properties.kcInputWrapperClass!}">
                             <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>  -->
-                                <input type="text" id="email" class="${properties.kcInputClass!}" name="email"
+                                <input type="text" id="email" class="inpuDesign ${properties.kcInputClass!}" name="email"
                                     value="${(register.formData.email!'')}" autocomplete="email"
-                                    style="height:50px;border-radius:5px;background-color:#EEEEEE;"
                                     placeholder="Email"
                                     aria-invalid="<#if messagesPerField.existsError('email')>true</#if>"
                                 />
@@ -100,9 +377,9 @@
                         
                         <div class="${properties.kcFormGroupClass!}">
                 
-                            <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
-                                <input type="text" id="username" class="${properties.kcInputClass!}" name="username"
-                                    style="height:50px;border-radius:5px;background-color:#EEEEEE";
+                            <div class="inputFields ${properties.kcInputWrapperClass!}">
+                                <input type="text" id="username"  class="inpuDesign ${properties.kcInputClass!}" name="username"
+                                    
                                     value="${(register.formData.username!'')}" autocomplete="username" placeholder="Username"
                                     aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"
                                 />
@@ -118,11 +395,11 @@
                         <#if passwordRequired??>
                             <div class="${properties.kcFormGroupClass!}">
                     
-                                <div class="${properties.kcInputWrapperClass!}" style="width:60%;margin-bottom:10px;">
+                                <div class="inputFields ${properties.kcInputWrapperClass!}">
                                 <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>  -->
-                                    <input type="password" id="password" class="${properties.kcInputClass!}" name="password"
+                                    <input type="password" id="password" class="inpuDesign ${properties.kcInputClass!}" name="password"
                                         autocomplete="new-password" placeholder="Password"
-                                        style="height:50px;border-radius:5px;background-color:#EEEEEE;"
+                                        
                                         aria-invalid="<#if messagesPerField.existsError('password','password-confirm')>true</#if>"
                                     />
 
@@ -135,11 +412,10 @@
                             </div>
 
                             <div class="${properties.kcFormGroupClass!}">
-                                <div class="${properties.kcInputWrapperClass!}" style="width:60%;height:50%;">
+                                <div class="confirmPasswordDiv ${properties.kcInputWrapperClass!}">
                                 <#--  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>  -->
-                                    <input type="password" id="password-confirm" class="${properties.kcInputClass!}"
+                                    <input type="password" id="password-confirm" class="inpuDesign ${properties.kcInputClass!}"
                                         name="password-confirm" placeholder="Confirm password"
-                                        style="height:50px;border-radius:5px;background-color:#EEEEEE;"
                                         aria-invalid="<#if messagesPerField.existsError('password-confirm')>true</#if>"
                                     />
 
@@ -161,14 +437,12 @@
                         </#if>
 
                         <div class="${properties.kcFormGroupClass!}">
-                            <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}" style="margin-left:0px;margin-right: 0px">
-                                <input style="width: 60%;background-color:#4baaf5;color:white;border-radius:5px;
-                                        border:none;height:50px;"  type="submit" value="${msg("doRegister")}"/>
+                            <div>
+                                <input class="submitInput" type="submit" value="${msg("doRegister")}"/>
                             </div>
                             <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                                 <div class="${properties.kcFormOptionsWrapperClass!}" >
-                                    <span><a href="${url.loginUrl}"
-                                    style="text-decoration:none;color:#C0C0C0;" class="registerlink">Already have an account? Sign in</a></span>
+                                    <span style="text-decoration:none;color:#C0C0C0;" class="registerlink">Already have an account? <a href="${url.loginUrl}">Sign in</a></span>
                                 </div>
                             </div>
 
@@ -177,7 +451,7 @@
                 </div>
             </div>
 
-            <div style="color:#808080;"><b>Oltranz</b> &emsp; . &emsp; .Copyright Ⓒ BaseSMS 2021.</div>
+            <div class="footer" style="color:#808080;"><b>Oltranz</b> &emsp; &emsp; Copyright Ⓒ BaseSMS 2021.</div>
             
         </div>
     </div>
