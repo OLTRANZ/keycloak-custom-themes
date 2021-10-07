@@ -1,0 +1,106 @@
+html, body {
+    height: 100%;
+    margin-top: -3%;
+  }
+
+.panel-heading{
+    display: flex;
+    justify-content: left;
+}
+
+#password,#username{
+    background: #FFFFFF;
+    border: 1px solid #DCDFE4;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.inputlabel{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #81858B;
+}
+
+.registerlink{
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 106.5%;
+    text-decoration-line: underline;
+    color: rgba(19, 32, 65, 0.5);
+}
+
+.login-pf body {
+    border-top:  transparent;
+    background: transparent;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+.hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.panel-body{
+    padding-top: 30px;
+}
+
+#kc-logo-wrapper {
+    background-image: none;
+    background-repeat: no-repeat;
+    visibility: hidden;
+}
+
+#kc-content #kc-content-wrapper #kc-form {
+    width: 100%;
+    height: 100%;
+}
+
+#loginbox {
+    margin-top: 100px;
+}
+
+
+@media (max-width: 541px) {
+    #loginbox{
+        margin-top: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 6px;
+    }
+
+    .panel-body{
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 542px) and (max-width: 1400px) {
+    #loginbox{
+        margin-top: 40px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+    .panel-body{
+        padding-top: 20px;
+    }
+}
