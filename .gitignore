@@ -1,5 +1,6 @@
 .DS_Store
 theme/.DS_Store
+.vscode
 # allow only jar
 target/*
 !target/*.jar

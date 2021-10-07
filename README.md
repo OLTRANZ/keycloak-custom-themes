@@ -1,50 +1,70 @@
 # keycloak-custom-themes
 
-This is a repo for custom themes for our keycloak
+This is a repo for custom themes for Oltranz Keycloak
 
 ---
 
 ## Getting Started
-1. git clone this repository && cd to the project directory
+Git clone this repository and cd into to the project directory
 
-### Installation
+### Prerequisites
 
+Prerequisite for viewing the themes is a local Keycloak installation. 
+1. You can follow this [tutorial](https://www.keycloak.org/docs/latest/getting_started/).
+2. Start the local Keycloak server
+```bash
+cd <path-to-keycloak>
+bin/standalone.sh
 ```
-Install keycloak(). After installing keycloak, take a theme of ypur choice from theme file and paster it in themes file of your keycloak
+This will start the keycloak server on `http://localhost:8080` 
+
+## Develop theme
+
+### Initialize theme
+
+1. From inside this repository, make a copy of the `theme/default_oltranz` folder. Name the new folder an appropriate name. This will be your new theme.
+2. Customize this folder to match your needs. Follow the [official documentation](https://www.keycloak.org/docs/latest/server_development/#_themes).
+
+> Note: This repository is shared by all themes. Do not make changes to other themes.
+
+### Package theme
+
+1. Edit the `META-INF/keycloak-themes.json` file to add your theme. Themes not added to this file will not be discovered by Keycloak. More info [here](https://www.keycloak.org/docs/latest/server_development/#deploying-themes)
+```json
+{
+    "themes": [                        # This is a list of objects. One object per theme. Do not edit other objects.
+        {
+            "name": "default_oltranz", # must be same name as your theme folder.
+            "types": [                 # You can add only the types you edited and leave the rest. You usually want to leave all 5.
+                "login",
+                "email",
+                "welcome",
+                "admin",
+                "account"
+            ]
+        } 
+    ]
+}
 ```
-
-### Start Dev Server
-
+2. Update the version of the theme by editing the following line in the pom.xml file.
+```xml
+<version>0.0.10</version>
 ```
-Start your keycloak server(you can run it with docker or by running standalone.sh scripts file )
+3. The theme is packaged as a jar file. 
+```bash
+mvn clean install
 ```
+This last command will create a `theme-x.x.x.jar` file in `target` folder where `x.x.x` is the version set earlier.
 
-### Build Prod Version
+### Deploy theme
+1. You will need to copy the packaged theme into the deployments folder of Keycloak and it will be loaded automatically. 
 
+Drag and drop or run the following command:
 
-## Pre-requisites
-* Keycloak
-* Git
-* VSCode, Eclipse, Intellij or even any other code editor of your prefered choice.
-
-## Installing
-* Install [keyclok](https://www.keycloak.org/downloads) if you dont have it installed.
-* Install [git](https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git), (optional) if you dont have it installed.
-* Install a Code Editor either Eclipse or VSCode, or even any other of your prefered choice.
-
-### Docker file
-
+```bash
+cp keycloak-custom-theme/target/theme-x.x.x.jar <path-to-local-keycloak>/standalone/deployments/
 ```
-Coming soon
-
-```
-
-### Building new tar file
-
-```
-tar -cvf <path-to-keycloak>/themes/oltranz.tar -C <path-to-keycloak>/themes oltranz
-```
-
+2. Wait a minute and restart the browser. Your theme shall show up under the drop down in the Keycloak realm settings.
 ## Running the Tests
 Currently Tests are under development, They'll be available soon
 
@@ -60,10 +80,6 @@ Coming Soon
 
 ## Authors
 * **JABIRO Christian** (https://github.com/jabichris)
-
-## Acknowledgments
-https://keycloak.discourse.group/t/creating-custom-theme-in-keycloak-x/7896/4
-mvn package
-
+* **Andrew Musoke** (https://github.com/andrew-musoke)
 ## Licence
-This software is published by `Oltranz Engineers Team` under the [MIT licence](http://opensource.org/licenses/MIT).
+This software is proprietary and published by `Oltranz Engineers Team`.
